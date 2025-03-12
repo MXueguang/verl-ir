@@ -7,7 +7,7 @@ def extract_solution(solution_str, method='strict'):
     boxed_re = re.compile(r"\\boxed{([^}]*)}")
     boxed_str = boxed_re.findall(solution_str)
     if len(boxed_str) > 0:
-        return boxed_str[-1]
+        return boxed_str[-1].replace('[', '').replace(']', '')
     else:
         return None
 
